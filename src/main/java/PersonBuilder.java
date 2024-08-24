@@ -2,35 +2,35 @@ public class PersonBuilder {
 
     Person person;
 
-    private String firstName;
-    private String lastName;
-    private int age;
-    private String address;
-
     public PersonBuilder setFirstName(String firstName) {
-        this.firstName = firstName;
+        person.setFirstName(firstName);
         return this;
     }
 
     public PersonBuilder setLastName(String lastName) {
-        this.lastName = lastName;
+        person.setLastName(lastName);
         return this;
     }
 
     public PersonBuilder setAge(int age) {
-        this.age = age;
+        person.setAge(age);
         return this;
     }
 
     public PersonBuilder setAddress(String address) {
-        this.address = address;
+        person.setAddress(address);
         return this;
     }
 
     public Person build() {
 
-        person = new Person(firstName, lastName, age);
-        if (address != null) person.setAddress(address);
+        person = new Person(
+                person.getFirstName(),
+                person.getLastName(),
+                person.getAge()
+        );
+
+        if (person.getAddress() != null) person.setAddress(person.getAddress());
 
         return person;
     }

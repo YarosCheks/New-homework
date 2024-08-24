@@ -5,7 +5,7 @@ public class Main {
                 .setFirstName("Анна")
                 .setLastName("Вольф")
                 .setAge(31)
-//                .setAddress("Сидней")
+                .setAddress("Сидней")
                 .build();
 
         System.out.println(mom.hasAddress());

@@ -10,14 +10,12 @@ public class Person {
     @Setter
     private String address;
 
-    public Person() {}
-
     public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
 
-        if (firstName == null || lastName == null) throw new IllegalStateException("Отсутствует имя или фамилия");
-
+        if (firstName == null || lastName == null)
+            throw new IllegalStateException("Отсутствует имя или фамилия");
     }
 
     public Person(String firstName, String lastName , Integer age) {
@@ -25,9 +23,11 @@ public class Person {
         this.lastName = lastName;
         this.age = age;
 
+        if (firstName == null || lastName == null)
+            throw new IllegalStateException("Отсутствует имя или фамилия");
 
-        if (firstName == null || lastName == null) throw new IllegalStateException("Отсутствует имя или фамилия");
-        if (age < 0) throw new IllegalArgumentException("Вы указали некорректный возраст");
+        if (age < 0)
+            throw new IllegalArgumentException("Вы указали некорректный возраст");
     }
 
     public void setLastName(String lastName) {
